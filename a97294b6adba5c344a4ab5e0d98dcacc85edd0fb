@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a72e520_a5cdfe5f",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2017-12-18T16:55:37Z",
+      "side": 1,
+      "message": "A newer python-testtools version (1.8.0) is available in EL7.\n\nhttps://cbs.centos.org/koji/buildinfo?buildID\u003d4395\n\n\n# yum info python-testtools\nLoaded plugins: fastestmirror, ovl\nLoading mirror speeds from cached hostfile\n * base: centos.mirror.ptisp.pt\n * extras: centos.mirror.ptisp.pt\n * updates: centos.mirror.ptisp.pt\nAvailable Packages\nName        : python-testtools\nArch        : noarch\nVersion     : 1.8.0\nRelease     : 2.el7\nSize        : 301 k\nRepo        : centos-openstack-pike/x86_64\nSummary     : Extensions to the Python unit testing framework\nURL         : https://launchpad.net/testtools\nLicense     : MIT\nDescription : testtools is a set of extensions to the Python standard library\u0027s unit testing\n            : framework.",
+      "revId": "a97294b6adba5c344a4ab5e0d98dcacc85edd0fb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a72e520_0504127d",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2017-12-18T16:55:37Z",
+      "side": 1,
+      "message": "ditto",
+      "revId": "a97294b6adba5c344a4ab5e0d98dcacc85edd0fb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
