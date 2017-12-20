@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "5a72e520_e8a98b7c",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-12-20T14:19:18Z",
+      "side": 1,
+      "message": "It should not be an issue. As higher version of the package will be picked up.",
+      "parentUuid": "5a72e520_a89f934f",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 43
+      },
+      "revId": "895028736747c87fe621b69d7e41ee8177ce1d0a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a72e520_4899bf6d",
         "filename": "python-octavia-tests-tempest.spec",
         "patchSetId": 3
@@ -60,6 +84,30 @@
       "side": 1,
       "message": "a leftover from previous patch set :)",
       "parentUuid": "5a72e520_4899bf6d",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 30
+      },
+      "revId": "895028736747c87fe621b69d7e41ee8177ce1d0a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a72e520_08b6e7dc",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-12-20T14:19:18Z",
+      "side": 1,
+      "message": "Please remove this.",
+      "parentUuid": "5a72e520_88a2d798",
       "range": {
         "startLine": 68,
         "startChar": 0,
