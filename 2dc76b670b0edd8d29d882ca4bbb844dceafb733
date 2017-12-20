@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a72e520_886c9738",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2017-12-20T17:15:16Z",
+      "side": 1,
+      "message": "nit: all BuildArch occurrences could be moved to top-level. Worth fixing only if you have to address other comments :)",
+      "revId": "2dc76b670b0edd8d29d882ca4bbb844dceafb733",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
