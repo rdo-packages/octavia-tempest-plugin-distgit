@@ -19,6 +19,29 @@
     },
     {
       "key": {
+        "uuid": "5a72e520_a8ca336c",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-12-20T13:57:20Z",
+      "side": 1,
+      "message": "These are not needed as here it is not mentioned https://github.com/openstack/octavia-tempest-plugin/blob/master/requirements.txt please remove that.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 41
+      },
+      "revId": "a97294b6adba5c344a4ab5e0d98dcacc85edd0fb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a72e520_0504127d",
         "filename": "python-octavia-tests-tempest.spec",
         "patchSetId": 2
@@ -30,6 +53,29 @@
       "writtenOn": "2017-12-18T16:55:37Z",
       "side": 1,
       "message": "ditto",
+      "revId": "a97294b6adba5c344a4ab5e0d98dcacc85edd0fb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a72e520_c8c76f63",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-12-20T13:57:20Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 96,
+        "startChar": 0,
+        "endLine": 100,
+        "endChar": 41
+      },
       "revId": "a97294b6adba5c344a4ab5e0d98dcacc85edd0fb",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
