@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "5a72e520_48b0dfdd",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-12-20T14:20:54Z",
+      "side": 1,
+      "message": "Yes, I probably forgot these two when cleaning the next line!",
+      "parentUuid": "5a72e520_a89f934f",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 43
+      },
+      "revId": "895028736747c87fe621b69d7e41ee8177ce1d0a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a72e520_4899bf6d",
         "filename": "python-octavia-tests-tempest.spec",
         "patchSetId": 3
@@ -107,6 +131,30 @@
       "writtenOn": "2017-12-20T14:19:18Z",
       "side": 1,
       "message": "Please remove this.",
+      "parentUuid": "5a72e520_88a2d798",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 30
+      },
+      "revId": "895028736747c87fe621b69d7e41ee8177ce1d0a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a72e520_68b59bcc",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 197
+      },
+      "writtenOn": "2017-12-20T14:20:54Z",
+      "side": 1,
+      "message": "Initial tests had version dependencies everywhere, and the openstackdocstheme was too high (hence the comment).\n\nBut long story short, yes it\u0027s a remnant :)",
       "parentUuid": "5a72e520_88a2d798",
       "range": {
         "startLine": 68,
