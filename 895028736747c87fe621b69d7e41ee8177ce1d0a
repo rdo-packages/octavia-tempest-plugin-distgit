@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "5a72e520_a89f934f",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2017-12-20T14:15:59Z",
+      "side": 1,
+      "message": "BRs should be unversioned, no?",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 67,
+        "endChar": 43
+      },
+      "revId": "895028736747c87fe621b69d7e41ee8177ce1d0a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5a72e520_4899bf6d",
         "filename": "python-octavia-tests-tempest.spec",
         "patchSetId": 3
@@ -13,6 +36,30 @@
       "writtenOn": "2017-12-20T14:12:59Z",
       "side": 1,
       "message": "What is this?",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 30
+      },
+      "revId": "895028736747c87fe621b69d7e41ee8177ce1d0a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a72e520_88a2d798",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2017-12-20T14:15:59Z",
+      "side": 1,
+      "message": "a leftover from previous patch set :)",
+      "parentUuid": "5a72e520_4899bf6d",
       "range": {
         "startLine": 68,
         "startChar": 0,
