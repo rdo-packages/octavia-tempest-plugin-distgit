@@ -34,6 +34,24 @@
       "revId": "2dc76b670b0edd8d29d882ca4bbb844dceafb733",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a72e520_4b6e19cb",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2017-12-20T22:59:11Z",
+      "side": 1,
+      "message": "Ah, overlooked that :)",
+      "parentUuid": "5a72e520_0b74219b",
+      "revId": "2dc76b670b0edd8d29d882ca4bbb844dceafb733",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
