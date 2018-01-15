@@ -38,9 +38,9 @@ This package contains Octavia tempest golang httpd code.
 
 %package -n python2-%{service}-tests-tempest
 Summary: %{summary}
+BuildArch:  noarch
 %{?python_provide:%python_provide python2-%{service}-tests-tempest}
 
-BuildArch:  noarch
 
 BuildRequires:  python2-devel
 BuildRequires:  python-pbr
@@ -74,9 +74,9 @@ It contains the documentation for the Octavia tempest plugin.
 %if 0%{?with_python3}
 %package -n python3-%{service}-tests-tempest
 Summary: %{summary}
+BuildArch:  noarch
 %{?python_provide:%python_provide python3-%{service}-tests-tempest}
 
-BuildArch:  noarch
 
 BuildRequires:  python3-devel
 BuildRequires:  python3-pbr
