@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa963961_acf9ccca",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-01-16T04:56:01Z",
+      "side": 1,
+      "message": "It would be good to move BuildArch to top level package(at L24) as it is same for all sub packages.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 18
+      },
+      "revId": "2d75687fe1044c0c05482e7ab5b8bc0858701c76",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
