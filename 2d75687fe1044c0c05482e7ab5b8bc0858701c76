@@ -1,0 +1,11 @@
+Code-Review+2: Carlos Goncalves <cgoncalves@redhat.com>
+Code-Review+1: Bernard Cafarelli <bcafarel@redhat.com>
+Code-Review+1: Yatin Karel <ykarel@redhat.com>
+Code-Review+2: nmagnezi <nmagnezi@redhat.com>
+Workflow+1: nmagnezi <nmagnezi@redhat.com>
+Verified+2: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-by: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-at: Tue, 16 Jan 2018 10:36:31 +0000
+Reviewed-on: https://review.rdoproject.org/r/11340
+Project: openstack/octavia-tempest-plugin-distgit
+Branch: refs/heads/rpm-master
