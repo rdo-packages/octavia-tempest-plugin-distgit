@@ -22,11 +22,14 @@ URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
 Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
 
+BuildRequires:  git
+BuildRequires:  openstack-macros
+
 %description
 %{common_desc}
 
 %package -n python-%{service}-tests-tempest-golang
-Summary:        python-%{service}-tests-tempest golang files
+Summary:        python2-%{service}-tests-tempest golang files
 
 BuildRequires:  golang
 BuildRequires:  glibc-static
@@ -40,19 +43,15 @@ This package contains Octavia tempest golang httpd code.
 Summary: %{summary}
 BuildArch:  noarch
 %{?python_provide:%python_provide python2-%{service}-tests-tempest}
-
-
 BuildRequires:  python2-devel
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
-BuildRequires:  git
-BuildRequires:  openstack-macros
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
 
 Requires:       python-%{service}-tests-tempest-golang = %{version}-%{release}
-Requires:       python-pbr >= 2.0
-Requires:       python-oslotest >= 1.10.0
-Requires:       python-tempest >= 17.1.0
-Requires:       python-tenacity >= 3.2.1
+Requires:       python2-pbr >= 2.0
+Requires:       python2-oslotest >= 1.10.0
+Requires:       python2-tempest >= 1:17.2.0
+Requires:       python2-tenacity >= 3.2.1
 
 %description -n python2-%{service}-tests-tempest
 %{common_desc}
@@ -63,9 +62,9 @@ Summary:        python-%{service}-tests-tempest documentation
 
 BuildArch:  noarch
 
-BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
-BuildRequires:  python-openstackdocstheme
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-oslo-sphinx
+BuildRequires:  python2-openstackdocstheme
 
 %description -n python-%{service}-tests-tempest-doc
 It contains the documentation for the Octavia tempest plugin.
@@ -85,7 +84,7 @@ BuildRequires:  python3-setuptools
 Requires:       python-%{service}-tests-tempest-golang = %{version}-%{release}
 Requires:       python3-pbr >= 2.0
 Requires:       python3-oslotest >= 1.10.0
-Requires:       python3-tempest >= 17.1.0
+Requires:       python3-tempest >= 1:17.2.0
 Requires:       python3-tenacity >= 3.2.1
 
 %description -n python3-%{service}-tests-tempest
