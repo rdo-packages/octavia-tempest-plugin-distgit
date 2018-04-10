@@ -173,3 +173,4 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
 %changelog
 * Mon Feb 19 2018 Chandan Kumar <chkumar@redhat.com> 0.0.1-0.1.019e4eb9git
 - Update to pre-release 0.0.1 (019e4eb90f2733783025ed73ae5dfe1f165c5d97)
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/octavia-tempest-plugin/commit/?id=f20ad20c30180f055ded86020fe4ed504730af11
