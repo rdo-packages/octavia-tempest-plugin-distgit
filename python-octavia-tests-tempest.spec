@@ -1,5 +1,5 @@
 %{!?upstream_version: %global upstream_version %{commit}}
-%global commit 019e4eb90f2733783025ed73ae5dfe1f165c5d97
+%global commit 51e91b4dfe9bed364912034b7f8a51528b46fd84
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 # DO NOT REMOVE ALPHATAG
 %global alphatag .%{shortcommit}git
@@ -19,7 +19,7 @@ Additionally it provides a plugin to automatically load these tests into Tempest
 
 Name:       python-%{service}-tests-tempest
 Version:    0.0.1
-Release:    0.1%{?alphatag}%{?dist}
+Release:    0.2%{?alphatag}%{?dist}
 Summary:    Tempest Integration of Octavia Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
@@ -58,6 +58,13 @@ Requires:       python2-pbr >= 2.0
 Requires:       python2-oslotest >= 1.10.0
 Requires:       python2-tempest >= 1:17.2.0
 Requires:       python2-tenacity >= 3.2.1
+Requires:       python2-dateutil
+Requires:       python-ipaddress
+Requires:       python2-oslo-config
+Requires:       python2-oslo-log
+Requires:       python2-oslo-utils
+Requires:       python2-requests
+Requires:       python2-six
 
 %description -n python2-%{service}-tests-tempest
 %{common_desc}
@@ -71,6 +78,9 @@ BuildArch:  noarch
 BuildRequires:  python2-sphinx
 BuildRequires:  python2-oslo-sphinx
 BuildRequires:  python2-openstackdocstheme
+# Required for documentation build
+BuildRequires:  python2-oslo-config
+BuildRequires:  python2-tempest
 
 %description -n python-%{service}-tests-tempest-doc
 It contains the documentation for the Octavia tempest plugin.
@@ -92,6 +102,13 @@ Requires:       python3-pbr >= 2.0
 Requires:       python3-oslotest >= 1.10.0
 Requires:       python3-tempest >= 1:17.2.0
 Requires:       python3-tenacity >= 3.2.1
+Requires:       python3-dateutil
+Requires:       python3-ipaddress
+Requires:       python3-oslo-config
+Requires:       python3-oslo-log
+Requires:       python3-oslo-utils
+Requires:       python3-requests
+Requires:       python3-six
 
 %description -n python3-%{service}-tests-tempest
 %{common_desc}
@@ -118,7 +135,8 @@ popd
 
 # Generate Docs
 %if 0%{?with_doc}
-%{__python2} setup.py build_sphinx -b html
+export PYTHONPATH=.
+sphinx-build -W -b html doc/source doc/build/html
 # remove the sphinx build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
@@ -133,17 +151,11 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 install -d -p %{buildroot}%{_bindir}
 install -p -m 0755 %{module}/contrib/httpd/%{plugin}-tests-httpd %{buildroot}%{_bindir}
 
-# Replace the path with its binary
-sed -e "/^SERVER_BINARY =/{N;s#pkg_resources.*#'/usr/bin/%{plugin}-tests-httpd'#}" \
-    -i %{buildroot}%{python2_sitelib}/%{module}/tests/server_util.py
-
 # Remove httpd.go code
 rm  %{buildroot}%{python2_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
 
 # And for python3
 %if 0%{?with_python3}
-sed -e "/^SERVER_BINARY =/{N;s#pkg_resources.*#'/usr/bin/%{plugin}-tests-httpd'#}" \
-    -i %{buildroot}%{python3_sitelib}/%{module}/tests/server_util.py
 rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
 %endif
 
@@ -171,5 +183,8 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
 %endif
 
 %changelog
+* Thu Apr 12 2018 Yatin Karel <ykarel@redhat.com> - 0.0.1-0.2.51e91b4dgit
+- Fix spec for updated scenario tests
+
 * Mon Feb 19 2018 Chandan Kumar <chkumar@redhat.com> 0.0.1-0.1.019e4eb9git
 - Update to pre-release 0.0.1 (019e4eb90f2733783025ed73ae5dfe1f165c5d97)
