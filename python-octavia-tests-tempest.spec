@@ -72,7 +72,7 @@ Summary:        python-%{service}-tests-tempest documentation
 BuildArch:  noarch
 
 BuildRequires:  python2-sphinx
-BuildRequires:  python2-oslo-sphinx
+BuildRequires:  python2-sphinxcontrib-apidoc
 BuildRequires:  python2-openstackdocstheme
 # Required for documentation build
 BuildRequires:  python2-oslo-config
