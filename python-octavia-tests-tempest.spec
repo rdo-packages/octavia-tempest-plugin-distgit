@@ -50,10 +50,10 @@ BuildRequires:  python2-setuptools
 Obsoletes:   python-octavia-tests < 2.0.0
 
 Requires:       python-%{service}-tests-tempest-golang = %{version}-%{release}
-Requires:       python2-pbr >= 2.0
-Requires:       python2-oslotest >= 1.10.0
-Requires:       python2-tempest >= 1:17.2.0
-Requires:       python2-tenacity >= 3.2.1
+Requires:       python2-pbr >= 3.1.1
+Requires:       python2-oslotest >= 3.2.0
+Requires:       python2-tempest >= 1:18.0.0
+Requires:       python2-tenacity >= 4.8.0
 Requires:       python2-dateutil
 Requires:       python-ipaddress
 Requires:       python2-oslo-config
@@ -94,10 +94,10 @@ BuildRequires:  python3-pbr
 BuildRequires:  python3-setuptools
 
 Requires:       python-%{service}-tests-tempest-golang = %{version}-%{release}
-Requires:       python3-pbr >= 2.0
-Requires:       python3-oslotest >= 1.10.0
-Requires:       python3-tempest >= 1:17.2.0
-Requires:       python3-tenacity >= 3.2.1
+Requires:       python3-pbr >= 3.1.1
+Requires:       python3-oslotest >= 3.2.0
+Requires:       python3-tempest >= 1:18.0.0
+Requires:       python3-tenacity >= 4.8.0
 Requires:       python3-dateutil
 Requires:       python3-ipaddress
 Requires:       python3-oslo-config
