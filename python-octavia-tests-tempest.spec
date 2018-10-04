@@ -49,7 +49,7 @@ BuildRequires:  python2-setuptools
 
 Obsoletes:   python-octavia-tests < 2.0.0
 
-Requires:       python-%{service}-tests-tempest-golang = %{version}-%{release}
+Requires:       python-%{service}-tests-tempest-golang
 Requires:       python2-pbr >= 3.1.1
 Requires:       python2-oslotest >= 3.2.0
 Requires:       python2-tempest >= 1:18.0.0
