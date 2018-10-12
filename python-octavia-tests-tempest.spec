@@ -126,7 +126,7 @@ rm -rf %{module}.egg-info
 
 # Generate octavia test httpd binary from httpd.go
 pushd %{module}/contrib/httpd
- go build -ldflags '-linkmode external -extldflags -static' -o %{plugin}-tests-httpd httpd.go
+ go build -ldflags '-linkmode external -extldflags -static' -o httpd.bin httpd.go
 popd
 
 # Generate Docs
@@ -143,20 +143,19 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 %py2_install
 
-# Move httpd binary to proper place
-install -d -p %{buildroot}%{_bindir}
-install -p -m 0755 %{module}/contrib/httpd/%{plugin}-tests-httpd %{buildroot}%{_bindir}
-
 # Remove httpd.go code
-rm  %{buildroot}%{python2_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
+rm  %{buildroot}%{python2_sitelib}/%{module}/contrib/httpd/httpd.go
 
 # And for python3
 %if 0%{?with_python3}
-rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
+rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.go
 %endif
 
 %files -n python-%{service}-tests-tempest-golang
-%{_bindir}/%{plugin}-tests-httpd
+%{python2_sitelib}/%{module}/contrib/httpd/httpd.bin
+%if 0%{?with_python3}
+%{python3_sitelib}/%{module}/contrib/httpd/httpd.bin
+%endif
 
 %files -n python2-%{service}-tests-tempest
 %license LICENSE
