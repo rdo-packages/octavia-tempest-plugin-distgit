@@ -1,0 +1,9 @@
+Code-Review+2: hguemar <hguemar@fedoraproject.org>
+Workflow+1: hguemar <hguemar@fedoraproject.org>
+Code-Review+2: Yatin Karel <ykarel@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Fri, 12 Oct 2018 15:27:08 +0000
+Reviewed-on: https://review.rdoproject.org/r/16909
+Project: openstack/octavia-tempest-plugin-distgit
+Branch: refs/heads/rpm-master
