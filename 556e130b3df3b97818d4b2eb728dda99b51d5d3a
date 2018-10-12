@@ -16,6 +16,24 @@
       "revId": "556e130b3df3b97818d4b2eb728dda99b51d5d3a",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_f721934e",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 5
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2018-10-12T13:34:25Z",
+      "side": 1,
+      "message": "golang subpackage is NOT a python-specific package.\n\nInitially I thought of installing httpd.bin in both %{buildroot}%{python2_sitelib}/%{module}/contrib/httpd/httpd.bin and %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.bin but it doesn\u0027t make sense. Also, it would take double as much of the size (~5 MB each httpd.bin).",
+      "parentUuid": "9abe1de1_f7fab3bc",
+      "revId": "556e130b3df3b97818d4b2eb728dda99b51d5d3a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }
