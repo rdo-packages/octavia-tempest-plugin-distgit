@@ -15,7 +15,7 @@ Additionally it provides a plugin to automatically load these tests into Tempest
 
 Name:       python-%{service}-tests-tempest
 Version:    0.1.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Tempest Integration of Octavia Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
@@ -99,7 +99,6 @@ Requires:       python3-oslotest >= 3.2.0
 Requires:       python3-tempest >= 1:18.0.0
 Requires:       python3-tenacity >= 4.8.0
 Requires:       python3-dateutil
-Requires:       python3-ipaddress
 Requires:       python3-oslo-config
 Requires:       python3-oslo-log
 Requires:       python3-oslo-utils
@@ -144,23 +143,32 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %py2_install
 
 # Move httpd binary to proper place
-install -d -p %{buildroot}%{_bindir}
-install -p -m 0755 %{module}/contrib/httpd/%{plugin}-tests-httpd %{buildroot}%{_bindir}
+install -d -p %{buildroot}%{_libexecdir}
+install -p -m 0755 %{module}/contrib/httpd/%{plugin}-tests-httpd %{buildroot}%{_libexecdir}/%{plugin}-tests-httpd
+ln -s -f %{_libexecdir}/%{plugin}-tests-httpd %{buildroot}%{python2_sitelib}/%{module}/contrib/httpd/httpd.bin
+%if 0%{?with_python3}
+ln -s -f %{_libexecdir}/%{plugin}-tests-httpd %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.bin
+%endif
 
 # Remove httpd.go code
-rm  %{buildroot}%{python2_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
+rm  %{buildroot}%{python2_sitelib}/%{module}/contrib/httpd/httpd.go
 
 # And for python3
 %if 0%{?with_python3}
-rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
+rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.go
 %endif
 
 %files -n python-%{service}-tests-tempest-golang
-%{_bindir}/%{plugin}-tests-httpd
+%{_libexecdir}/%{plugin}-tests-httpd
+%{python2_sitelib}/%{module}/contrib/httpd/httpd.bin
+%if 0%{?with_python3}
+%{python3_sitelib}/%{module}/contrib/httpd/httpd.bin
+%endif
 
 %files -n python2-%{service}-tests-tempest
 %license LICENSE
 %doc README.rst
+%exclude %{python2_sitelib}/%{module}/contrib/httpd/httpd.bin
 %{python2_sitelib}/%{module}
 %{python2_sitelib}/*.egg-info
 
@@ -168,6 +176,7 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
 %files -n python3-%{service}-tests-tempest
 %license LICENSE
 %doc README.rst
+%exclude %{python3_sitelib}/%{module}/contrib/httpd/httpd.bin
 %{python3_sitelib}/%{module}
 %{python3_sitelib}/*.egg-info
 %endif
@@ -179,5 +188,8 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.{bin,go}
 %endif
 
 %changelog
+* Fri Oct 12 2018 Carlos Goncalves <cgoncalves@redhat.com> 0.1.0-2
+- Fix httpd binary location to expected path by tests
+
 * Wed Aug 22 2018 Chandan Kumar <chkumar@redhat.com> 0.1.0-1
 - Update to 0.1.0
