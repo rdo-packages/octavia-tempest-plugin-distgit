@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_f77d131d",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2018-10-12T15:51:11Z",
+      "side": 1,
+      "message": "Ah, I need to bump this right?",
+      "range": {
+        "startLine": 18,
+        "startChar": 12,
+        "endLine": 18,
+        "endChar": 21
+      },
+      "revId": "3e82ed59181c4259ab3e10a62c06006d74e11398",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
