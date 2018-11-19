@@ -7,7 +7,7 @@
 %global service octavia
 %global plugin octavia-tempest-plugin
 %global module octavia_tempest_plugin
-%global with_doc 1
+%global with_doc 0
 
 %if 0%{?fedora}
 %global with_python3 1
