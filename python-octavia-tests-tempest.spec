@@ -52,11 +52,12 @@ This package contains Octavia tempest golang httpd code.
 Summary: %{summary}
 BuildArch:  noarch
 %{?python_provide:%python_provide python%{pyver}-%{service}-tests-tempest}
+
 BuildRequires:  python%{pyver}-devel
 BuildRequires:  python%{pyver}-pbr
 BuildRequires:  python%{pyver}-setuptools
 
-Obsoletes:   python-octavia-tests < 2.0.0
+Obsoletes:      python-octavia-tests < 2.0.0
 
 Requires:       python%{pyver}-%{service}-tests-tempest-golang
 Requires:       python%{pyver}-pbr >= 3.1.1
