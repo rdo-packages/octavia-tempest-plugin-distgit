@@ -69,11 +69,15 @@ Requires:       python%{pyver}-oslotest >= 3.2.0
 Requires:       python%{pyver}-tempest >= 1:18.0.0
 Requires:       python%{pyver}-tenacity >= 4.8.0
 Requires:       python%{pyver}-dateutil
+Requires:       python%{pyver}-octavia-lib >= 1.0.0
 Requires:       python%{pyver}-oslo-config
 Requires:       python%{pyver}-oslo-log
 Requires:       python%{pyver}-oslo-utils
 Requires:       python%{pyver}-requests
 Requires:       python%{pyver}-six
+Requires:       python%{pyver}-cryptography >= 2.1
+Requires:       python%{pyver}-barbicanclient >= 4.5.2
+Requires:       python%{pyver}-pyOpenSSL >= 17.1.0
 
 # Handle python2 exception
 %if %{pyver} == 2
