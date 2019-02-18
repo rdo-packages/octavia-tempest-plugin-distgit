@@ -97,8 +97,12 @@ BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  python%{pyver}-sphinxcontrib-apidoc
 BuildRequires:  python%{pyver}-openstackdocstheme
 # Required for documentation build
+BuildRequires:  python%{pyver}-barbicanclient
+BuildRequires:  python%{pyver}-octavia-lib
 BuildRequires:  python%{pyver}-oslo-config
 BuildRequires:  python%{pyver}-tempest
+BuildRequires:  python%{pyver}-tenacity
+BuildRequires:  python%{pyver}-pyOpenSSL
 
 %description -n python-%{service}-tests-tempest-doc
 It contains the documentation for the Octavia tempest plugin.
