@@ -39,6 +39,7 @@ BuildRequires:  openstack-macros
 %package -n python%{pyver}-%{service}-tests-tempest-golang
 Summary:        python%{pyver}-%{service}-tests-tempest golang files
 %{?python_provide:%python_provide python%{pyver}-%{service}-tests-tempest-golang}
+Obsoletes:      python%{pyver}-%{service}-tests-golang < 5.0.0
 
 BuildRequires:  golang
 BuildRequires:  glibc-static
