@@ -120,10 +120,12 @@ rm -rf %{module}.egg-info
 %build
 %{pyver_build}
 
+rm -f %{module}/contrib/httpd/*bin
+
 # Generate octavia test httpd binary from httpd.go
 pushd %{module}/contrib/httpd
 %if 0%{?rhel} > 7
- go build -ldflags '-compressdwarf=false -linkmode external -extldflags "-static -ldl -lz"' -o %{plugin}-tests-httpd httpd.go
+ go build -ldflags '-compressdwarf=false -linkmode external -extldflags "-z now -pie -static -ldl -lz"' -o %{plugin}-tests-httpd httpd.go
 %else
  go build -ldflags '-linkmode external -extldflags -static' -o %{plugin}-tests-httpd httpd.go
 %endif
