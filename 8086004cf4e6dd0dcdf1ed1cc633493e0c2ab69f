@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d86b05f2_f3e4edfa",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2019-06-17T11:05:14Z",
+      "side": 1,
+      "message": "What happens when e.g. 5.0.1 is released?",
+      "range": {
+        "startLine": 44,
+        "startChar": 57,
+        "endLine": 44,
+        "endChar": 62
+      },
+      "revId": "8086004cf4e6dd0dcdf1ed1cc633493e0c2ab69f",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
