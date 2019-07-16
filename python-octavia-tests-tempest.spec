@@ -19,8 +19,8 @@ Additionally it provides a plugin to automatically load these tests into Tempest
 
 
 Name:       python-%{service}-tests-tempest
-Version:    0.0.1
-Release:    0.3%{?alphatag}%{?dist}
+Version:    1.1.0
+Release:    1%{?alphatag}%{?dist}
 Summary:    Tempest Integration of Octavia Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
@@ -66,6 +66,10 @@ Requires:       python2-oslo-log
 Requires:       python2-oslo-utils
 Requires:       python2-requests
 Requires:       python2-six
+Requires:       python2-cryptography >= 2.1
+Requires:       python2-barbicanclient >= 4.5.2
+Requires:       python2-pyOpenSSL >= 17.1.0
+Requires:       python2-oslo-serialization >= 2.18.0
 
 %description -n python2-%{service}-tests-tempest
 %{common_desc}
@@ -109,6 +113,10 @@ Requires:       python3-oslo-log
 Requires:       python3-oslo-utils
 Requires:       python3-requests
 Requires:       python3-six
+Requires:       python3-cryptography >= 2.1
+Requires:       python3-barbicanclient >= 4.5.2
+Requires:       python3-pyOpenSSL >= 17.1.0
+Requires:       python3-oslo-serialization >= 2.18.0
 
 %description -n python3-%{service}-tests-tempest
 %{common_desc}
@@ -193,6 +201,9 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/httpd/httpd.go
 %endif
 
 %changelog
+* Tue Jul 16 2019 RDO <dev@lists.rdoproject.org> 1.1.0-1.51e91b4git
+- Update to 1.1.0
+
 * Fri Oct 12 2018 Carlos Goncalves <cgoncalves@redhat.com> 0.0.1-0.3.51e91b4git
 - Fix httpd binary location to expected path by tests
 
