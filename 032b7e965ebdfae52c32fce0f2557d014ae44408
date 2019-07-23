@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3c8b1059_e8c4a15f",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2019-07-23T13:16:05Z",
+      "side": 1,
+      "message": "requirements.txt diff between 0.2.0 and 1.1.0:\n\nADDED:\n  cryptography \u003e\u003d 2.1\n  oslo.serialization !\u003d 2.19.1,\u003e\u003d 2.18.0\n  pyOpenSSL \u003e\u003d 17.1.0\n  python-barbicanclient \u003e\u003d 4.5.2",
+      "revId": "032b7e965ebdfae52c32fce0f2557d014ae44408",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
