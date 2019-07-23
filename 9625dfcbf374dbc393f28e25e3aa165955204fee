@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a45317bc_6e118a63",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2019-07-23T13:08:50Z",
+      "side": 1,
+      "message": "requirements.txt diff between 1.0.0 and 1.1.0:\n\nREMOVED:\n  octavia-lib \u003e\u003d 1.0.0",
+      "revId": "9625dfcbf374dbc393f28e25e3aa165955204fee",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
