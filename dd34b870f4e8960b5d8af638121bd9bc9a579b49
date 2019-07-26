@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e0a2b24_63ba802c",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-07-26T11:44:03Z",
+      "side": 1,
+      "message": "this can be removed.",
+      "range": {
+        "startLine": 23,
+        "startChar": 14,
+        "endLine": 23,
+        "endChar": 25
+      },
+      "revId": "dd34b870f4e8960b5d8af638121bd9bc9a579b49",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7eb6e155_3c54962d",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2019-07-26T11:44:03Z",
+      "side": 1,
+      "message": "ditto",
+      "range": {
+        "startLine": 204,
+        "startChar": 56,
+        "endLine": 204,
+        "endChar": 67
+      },
+      "revId": "dd34b870f4e8960b5d8af638121bd9bc9a579b49",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
