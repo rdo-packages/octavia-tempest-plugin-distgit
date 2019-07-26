@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "4ab4e28f_0d3e068f",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2019-07-26T12:05:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e0a2b24_63ba802c",
+      "range": {
+        "startLine": 23,
+        "startChar": 14,
+        "endLine": 23,
+        "endChar": 25
+      },
+      "revId": "dd34b870f4e8960b5d8af638121bd9bc9a579b49",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7eb6e155_3c54962d",
         "filename": "python-octavia-tests-tempest.spec",
         "patchSetId": 2
@@ -36,6 +60,30 @@
       "writtenOn": "2019-07-26T11:44:03Z",
       "side": 1,
       "message": "ditto",
+      "range": {
+        "startLine": 204,
+        "startChar": 56,
+        "endLine": 204,
+        "endChar": 67
+      },
+      "revId": "dd34b870f4e8960b5d8af638121bd9bc9a579b49",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "575099d7_1a7ed1db",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 204,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2019-07-26T12:05:13Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7eb6e155_3c54962d",
       "range": {
         "startLine": 204,
         "startChar": 56,
