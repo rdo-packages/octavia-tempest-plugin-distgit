@@ -79,6 +79,7 @@ Requires:       python%{pyver}-cryptography >= 2.1
 Requires:       python%{pyver}-barbicanclient >= 4.5.2
 Requires:       python%{pyver}-pyOpenSSL >= 17.1.0
 Requires:       python%{pyver}-oslo-serialization >= 2.18.0
+Requires:       python%{pyver}-keystoneauth1 >= 3.3.0
 
 # Handle python2 exception
 %if %{pyver} == 2
