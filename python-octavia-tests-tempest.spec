@@ -97,6 +97,7 @@ BuildArch:  noarch
 
 BuildRequires:  python%{pyver}-sphinx
 BuildRequires:  python%{pyver}-sphinxcontrib-apidoc
+BuildRequires:  python%{pyver}-sphinxcontrib-rsvgconverter
 BuildRequires:  python%{pyver}-openstackdocstheme
 # Required for documentation build
 BuildRequires:  python%{pyver}-barbicanclient
@@ -135,7 +136,7 @@ popd
 # Generate Docs
 %if 0%{?with_doc}
 export PYTHONPATH=.
-sphinx-build-%{pyver} -W -b html doc/source doc/build/html
+sphinx-build-%{pyver} -b html doc/source doc/build/html
 # remove the sphinx build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
