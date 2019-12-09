@@ -41,10 +41,11 @@ Summary:        python%{pyver}-%{service}-tests-tempest golang files
 %{?python_provide:%python_provide python%{pyver}-%{service}-tests-tempest-golang}
 
 BuildRequires:  golang
-BuildRequires:  glibc-static
 %if 0%{?rhel} > 7
-BuildRequires:  openssl-static
-BuildRequires:  zlib-static
+BuildRequires:  openssl-devel
+BuildRequires:  zlib-devel
+%else
+BuildRequires:  glibc-static
 %endif
 
 %description -n python%{pyver}-%{service}-tests-tempest-golang
@@ -127,7 +128,7 @@ rm -f %{module}/contrib/httpd/*bin
 # Generate octavia test httpd binary from httpd.go
 pushd %{module}/contrib/httpd
 %if 0%{?rhel} > 7
- go build -ldflags '-compressdwarf=false -linkmode external -extldflags "-z now -pie -static -ldl -lz"' -o %{plugin}-tests-httpd httpd.go
+ go build -ldflags '-compressdwarf=false -linkmode external -extldflags "-z now -pie -ldl -lz"' -o %{plugin}-tests-httpd httpd.go
 %else
  go build -ldflags '-linkmode external -extldflags -static' -o %{plugin}-tests-httpd httpd.go
 %endif
