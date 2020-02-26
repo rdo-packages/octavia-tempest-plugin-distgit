@@ -122,14 +122,14 @@ rm -rf %{module}.egg-info
 %build
 %{pyver_build}
 
-rm -f %{module}/contrib/httpd/*bin
+rm -f %{module}/contrib/test_server/*bin
 
-# Generate octavia test httpd binary from httpd.go
-pushd %{module}/contrib/httpd
+# Generate octavia test httpd binary from test_server.go
+pushd %{module}/contrib/test_server
 %if 0%{?rhel} > 7
- go build -ldflags '-compressdwarf=false -linkmode external -extldflags "-z now -pie -static -ldl -lz"' -o %{plugin}-tests-httpd httpd.go
+ go build -ldflags '-compressdwarf=false -linkmode external -extldflags "-z now -pie -static -ldl -lz"' -o %{plugin}-tests-httpd test_server.go
 %else
- go build -ldflags '-linkmode external -extldflags -static' -o %{plugin}-tests-httpd httpd.go
+ go build -ldflags '-linkmode external -extldflags -static' -o %{plugin}-tests-httpd test_server.go
 %endif
 popd
 
@@ -147,19 +147,19 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 # Move httpd binary to proper place
 install -d -p %{buildroot}%{_libexecdir}
 install -p -m 0755 %{module}/contrib/httpd/%{plugin}-tests-httpd %{buildroot}%{_libexecdir}/%{plugin}-tests-httpd
-ln -s -f %{_libexecdir}/%{plugin}-tests-httpd %{buildroot}%{pyver_sitelib}/%{module}/contrib/httpd/httpd.bin
+ln -s -f %{_libexecdir}/%{plugin}-tests-httpd %{buildroot}%{pyver_sitelib}/%{module}/contrib/test_server/test_server.bin
 
-# Remove httpd.go code
-rm  %{buildroot}%{pyver_sitelib}/%{module}/contrib/httpd/httpd.go
+# Remove test_server.go code
+rm  %{buildroot}%{pyver_sitelib}/%{module}/contrib/test_server/test_server.go
 
 %files -n python%{pyver}-%{service}-tests-tempest-golang
 %{_libexecdir}/%{plugin}-tests-httpd
-%{pyver_sitelib}/%{module}/contrib/httpd/httpd.bin
+%{pyver_sitelib}/%{module}/contrib/test_server/test_server.bin
 
 %files -n python%{pyver}-%{service}-tests-tempest
 %license LICENSE
 %doc README.rst
-%exclude %{pyver_sitelib}/%{module}/contrib/httpd/httpd.bin
+%exclude %{pyver_sitelib}/%{module}/contrib/test_server/test_server.bin
 %{pyver_sitelib}/%{module}
 %{pyver_sitelib}/*.egg-info
 
