@@ -170,3 +170,4 @@ rm  %{buildroot}%{pyver_sitelib}/%{module}/contrib/httpd/httpd.go
 %endif
 
 %changelog
+# REMOVEME: error caused by commit http://git.openstack.org/cgit/openstack/octavia-tempest-plugin/commit/?id=b0eb0aa973c9462fc59afe7700cec8bb17e7e5fb
