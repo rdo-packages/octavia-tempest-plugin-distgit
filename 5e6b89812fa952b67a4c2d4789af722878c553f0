@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "91f28f8e_1164c093",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2020-04-29T05:34:53Z",
+      "side": 1,
+      "message": "can be removed",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 59,
+        "endChar": 44
+      },
+      "revId": "5e6b89812fa952b67a4c2d4789af722878c553f0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}
