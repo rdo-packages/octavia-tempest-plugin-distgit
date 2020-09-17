@@ -60,12 +60,12 @@ Requires:       python3-oslo-config >= 5.2.0
 Requires:       python3-oslo-log >= 3.36.0
 Requires:       python3-oslo-utils >= 3.33.0
 Requires:       python3-requests >= 2.14.2
-Requires:       python3-six >= 1.10.0
 Requires:       python3-cryptography >= 2.1
 Requires:       python3-barbicanclient >= 4.5.2
 Requires:       python3-pyOpenSSL >= 17.1.0
 Requires:       python3-oslo-serialization >= 2.18.0
 Requires:       python3-keystoneauth1 >= 3.3.0
+Requires:       python3-testtools >= 2.2.0
 
 
 %description -n python3-%{service}-tests-tempest
