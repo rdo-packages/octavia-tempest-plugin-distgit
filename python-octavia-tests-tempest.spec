@@ -125,7 +125,7 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %install
 %{py3_install}
 
-# Move httpd binary to proper place
+# Move httpd binary to a proper place
 install -d -p %{buildroot}%{_libexecdir}
 install -p -m 0755 %{module}/contrib/test_server/%{plugin}-tests-httpd %{buildroot}%{_libexecdir}/%{plugin}-tests-httpd
 ln -s -f %{_libexecdir}/%{plugin}-tests-httpd %{buildroot}%{python3_sitelib}/%{module}/contrib/test_server/test_server.bin
