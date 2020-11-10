@@ -66,7 +66,12 @@ Requires:       python3-barbicanclient >= 4.5.2
 Requires:       python3-pyOpenSSL >= 17.1.0
 Requires:       python3-oslo-serialization >= 2.18.0
 Requires:       python3-keystoneauth1 >= 3.3.0
+<<<<<<< HEAD   (82d914 ManageSF commit)
 
+=======
+Requires:       python3-testtools >= 2.2.0
+Requires:       python3-httpx
+>>>>>>> CHANGE (db3ff2 Added python3-httpx as a require)
 
 %description -n python3-%{service}-tests-tempest
 %{common_desc}
