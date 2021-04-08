@@ -29,6 +29,10 @@ License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
 Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
+# workaround for handling py2 and py3 mock issue
+%if %{pyver} == 2
+Patch0001: 0001-Use-six-module-to-call-urllib.parse.patch
+%endif
 
 BuildRequires:  git
 BuildRequires:  openstack-macros
@@ -170,6 +174,9 @@ rm  %{buildroot}%{pyver_sitelib}/%{module}/contrib/test_server/test_server.go
 %endif
 
 %changelog
+* Thu Apr 8 2021 Chandan Kumar <chkumar@redhat.com> 1.3.0-2
+- Added patch for handing py2 and py3 via six
+
 * Thu Apr 2 2020 Carlos Goncalves <cgoncalves@redhat.com> 1.3.0-1
 - Update to 1.3.0
 * Thu Sep 26 2019 RDO <dev@lists.rdoproject.org> 1.2.0-1

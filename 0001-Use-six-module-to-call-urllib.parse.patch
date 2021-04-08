@@ -1,0 +1,29 @@
+From 3d1d0690aa68dcc9e0a243791760ec00f6946bbb Mon Sep 17 00:00:00 2001
+From: "Chandan Kumar (raukadah)" <chkumar@redhat.com>
+Date: Thu, 8 Apr 2021 11:46:55 +0530
+Subject: [PATCH 1/1] Use six module to call urllib.parse
+
+For train, we need to keep the code compatible with py2 and py3
+so that dlrn can build it. Let's use six module for the same.
+
+Signed-off-by: Chandan Kumar (raukadah) <chkumar@redhat.com>
+---
+ octavia_tempest_plugin/tests/validators.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/octavia_tempest_plugin/tests/validators.py b/octavia_tempest_plugin/tests/validators.py
+index 5972d54..494ea2b 100644
+--- a/octavia_tempest_plugin/tests/validators.py
++++ b/octavia_tempest_plugin/tests/validators.py
+@@ -19,7 +19,7 @@ import ipaddress
+ import requests
+ import socket
+ import time
+-from urllib.parse import urlparse
++from six.moves.urllib.parse import urlparse
+ 
+ from oslo_log import log as logging
+ from tempest import config
+-- 
+2.30.2
+
