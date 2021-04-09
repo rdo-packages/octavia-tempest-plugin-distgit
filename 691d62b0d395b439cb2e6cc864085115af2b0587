@@ -1,0 +1,8 @@
+Verified+2: Javier Peña <jpena@redhat.com>
+Code-Review+2: Javier Peña <jpena@redhat.com>
+Workflow+1: Javier Peña <jpena@redhat.com>
+Submitted-by: Javier Peña <jpena@redhat.com>
+Submitted-at: Fri, 09 Apr 2021 11:02:12 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/octavia-tempest-plugin-distgit/+/33201
+Project: openstack/octavia-tempest-plugin-distgit
+Branch: refs/heads/train-rdo
