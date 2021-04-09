@@ -175,3 +175,4 @@ rm  %{buildroot}%{pyver_sitelib}/%{module}/contrib/test_server/test_server.go
 * Thu Sep 26 2019 RDO <dev@lists.rdoproject.org> 1.2.0-1
 - Update to 1.2.0
 
+# REMOVEME: error caused by commit https://opendev.org/openstack/octavia-tempest-plugin/commit/f7718ef862c568f7c761c17ac9736e650ececb73
