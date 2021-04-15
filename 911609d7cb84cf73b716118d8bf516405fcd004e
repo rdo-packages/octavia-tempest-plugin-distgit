@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f248255e_1154771c",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2021-04-15T07:05:19Z",
+      "side": 1,
+      "message": "This generates a dynamically linked executable, that will not run on many distributions (e.g. alpine or cirros). Static linking was used to avoid it.",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 189
+      },
+      "revId": "911609d7cb84cf73b716118d8bf516405fcd004e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
