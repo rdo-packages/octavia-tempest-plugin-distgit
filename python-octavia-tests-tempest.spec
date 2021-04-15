@@ -30,9 +30,6 @@ Summary:        python3-%{service}-tests-tempest golang files
 %{?python_provide:%python_provide python3-%{service}-tests-tempest-golang}
 
 BuildRequires:  golang
-BuildRequires:  glibc-static
-BuildRequires:  openssl-static
-BuildRequires:  zlib-static
 
 %description -n python3-%{service}-tests-tempest-golang
 %{common_desc}
@@ -108,11 +105,10 @@ rm -f %{module}/contrib/test_server/*bin
 
 # Generate octavia test httpd binary from test_server.go
 pushd %{module}/contrib/test_server
-%if 0%{?rhel} > 7
- go build -ldflags '-compressdwarf=false -linkmode external -extldflags "-z now -pie -static -ldl -lz"' -o %{plugin}-tests-httpd test_server.go
-%else
- go build -ldflags '-linkmode external -extldflags -static' -o %{plugin}-tests-httpd test_server.go
-%endif
+# gobuild from Fedora's go-rpm-macros https://pagure.io/go-rpm-macros/blob/master/f/rpm/macros.d/macros.go-compilers-golang
+# debuginfo missing with compressdwarf https://bugzilla.redhat.com/show_bug.cgi?id=1602096
+%global _dwz_low_mem_die_limit 0
+CGO_ENABLED=0 GOOS=linux go build -o %{plugin}-tests-httpd -ldflags "-compressdwarf=false ${LDFLAGS:-} -B 0x$(head -c20 /dev/urandom|od -An -tx1|tr -d ' \n') -extldflags '-static %__global_ldflags'" -a -v -x test_server.go
 popd
 
 # Generate Docs
