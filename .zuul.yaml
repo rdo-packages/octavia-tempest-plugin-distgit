@@ -1,0 +1,7 @@
+- project:
+    check:
+      jobs:
+        - DLRN-rpmbuild-centos8
+        - tripleo-ci-centos-8-scenario010-standalone-victoria:
+            dependencis:
+              - DLRN-rpmbuild-centos8
