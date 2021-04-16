@@ -70,6 +70,30 @@
       "revId": "911609d7cb84cf73b716118d8bf516405fcd004e",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ce29d659_2d149121",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 432
+      },
+      "writtenOn": "2021-04-16T12:13:33Z",
+      "side": 1,
+      "message": "Upstream and downstream use cirros-based VMs.\n\nThe binary is compiled before Tempest runs in devstack. The Octavia tempest suite copies the binary into the cirros VMs with \"scp\":\n\nhttps://github.com/openstack/octavia-tempest-plugin/blob/67ecd6757dd62fda909428dce46815ae7584a1fd/octavia_tempest_plugin/tests/test_base.py#L952-L959\n\nhttps://opendev.org/openstack/octavia-tempest-plugin/src/branch/master/octavia_tempest_plugin/config.py#L232-L235\n\nhttps://opendev.org/openstack/tripleo-quickstart/src/branch/master/config/general_config/featureset062.yml#L47-L48",
+      "parentUuid": "2338a1d4_ce7dd645",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 125,
+        "endChar": 189
+      },
+      "revId": "911609d7cb84cf73b716118d8bf516405fcd004e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
     }
   ]
 }
