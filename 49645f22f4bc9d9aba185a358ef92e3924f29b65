@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c2a551f4_101e4f5e",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 6
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2021-05-26T08:47:08Z",
+      "side": 1,
+      "message": "According to https://opendev.org/openstack/octavia-tempest-plugin/src/branch/master/octavia_tempest_plugin/contrib/test_server/README.rst we should be able to remove these two, too",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 45,
+        "endChar": 27
+      },
+      "revId": "49645f22f4bc9d9aba185a358ef92e3924f29b65",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
