@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "72e2d6d5_6107209e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 8
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 85
+      },
+      "writtenOn": "2021-05-26T22:02:11Z",
+      "side": 1,
+      "message": "FTR diff to the upstream line was that I had to remove -s -w from ldflags since w/o those we get no debuginfo generated and rpmbuild fails.\n go tool link\n ...\n  -s\tdisable symbol table\n ...\n  -w\tdisable DWARF generation",
+      "revId": "4c153372e404a7e5d75edd815a5deba74843e4ef",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": true
+    }
+  ]
+}
