@@ -75,6 +75,7 @@ Requires:       python3-oslo-serialization >= 2.18.0
 Requires:       python3-keystoneauth1 >= 3.3.0
 Requires:       python3-testtools >= 2.2.0
 Requires:       python3-httpx
+Requires:       python3-h2
 
 %description -n python3-%{service}-tests-tempest
 %{common_desc}
