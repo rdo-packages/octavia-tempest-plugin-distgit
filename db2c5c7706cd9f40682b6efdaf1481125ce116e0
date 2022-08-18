@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4d7be63_0832ce50",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 141
+      },
+      "writtenOn": "2022-08-18T11:05:18Z",
+      "side": 1,
+      "message": "Too fast, belated +1 :)",
+      "revId": "db2c5c7706cd9f40682b6efdaf1481125ce116e0",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
