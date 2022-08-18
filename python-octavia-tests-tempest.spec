@@ -14,7 +14,7 @@ Additionally it provides a plugin to automatically load these tests into Tempest
 
 Name:       python-%{service}-tests-tempest
 Version:    1.7.0
-Release:    1%{?dist}
+Release:    2%{?dist}
 Summary:    Tempest Integration of Octavia Project
 License:    ASL 2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
@@ -75,6 +75,7 @@ Requires:       python3-oslo-serialization >= 2.18.0
 Requires:       python3-keystoneauth1 >= 3.3.0
 Requires:       python3-testtools >= 2.2.0
 Requires:       python3-httpx
+Requires:       python3-h2
 
 %description -n python3-%{service}-tests-tempest
 %{common_desc}
@@ -162,6 +163,9 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/test_server/test_server.go
 %endif
 
 %changelog
+* Thu Dec 15 2022 Joel Capitao <jcapitao@redhat.com> 1.7.0-2
+- Add python3-h2 as a runtime dep
+
 * Wed Jun 30 2021 Alfredo Moralejo <amoralej@redhat.com> 1.7.0-1
 - Update to 1.7.0
 
