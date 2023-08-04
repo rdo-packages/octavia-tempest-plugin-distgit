@@ -6,6 +6,12 @@
 %global with_doc 1
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order bashate
+# Exclude sphinx from BRs if docs are disabled
+%if ! 0%{?with_doc}
+%global excluded_brs %{excluded_brs} sphinx openstackdocstheme
+%endif
 
 %global common_desc \
 This package contains Tempest tests to cover the Octavia project. \
@@ -16,7 +22,7 @@ Name:       python-%{service}-tests-tempest
 Version:    XXX
 Release:    XXX
 Summary:    Tempest Integration of Octavia Project
-License:    ASL 2.0
+License:    Apache-2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
 
 Source0:    http://tarballs.openstack.org/%{plugin}/%{plugin}-%{upstream_version}.tar.gz
@@ -38,7 +44,6 @@ BuildRequires:  openstack-macros
 
 %package -n python3-%{service}-tests-tempest-golang
 Summary:        python3-%{service}-tests-tempest golang files
-%{?python_provide:%python_provide python3-%{service}-tests-tempest-golang}
 
 BuildRequires:  golang
 
@@ -50,32 +55,13 @@ This package contains Octavia tempest golang httpd code.
 %package -n python3-%{service}-tests-tempest
 Summary: %{summary}
 BuildArch:  noarch
-%{?python_provide:%python_provide python3-%{service}-tests-tempest}
 
 BuildRequires:  python3-devel
-BuildRequires:  python3-pbr
-BuildRequires:  python3-setuptools
+BuildRequires:  pyproject-rpm-macros
 
-Obsoletes:      python-octavia-tests < 2.0.0
-
-Requires:       python3-%{service}-tests-tempest-golang
-Requires:       python3-pbr >= 2.0.0
-Requires:       python3-oslotest >= 3.2.0
-Requires:       python3-tempest >= 1:18.0.0
-Requires:       python3-tenacity >= 4.4.0
-Requires:       python3-dateutil >= 2.5.3
-Requires:       python3-oslo-config >= 5.2.0
-Requires:       python3-oslo-log >= 3.36.0
-Requires:       python3-oslo-utils >= 3.33.0
-Requires:       python3-requests >= 2.14.2
-Requires:       python3-cryptography >= 2.1
-Requires:       python3-barbicanclient >= 4.5.2
-Requires:       python3-pyOpenSSL >= 17.1.0
-Requires:       python3-oslo-serialization >= 2.18.0
-Requires:       python3-keystoneauth1 >= 3.3.0
-Requires:       python3-testtools >= 2.2.0
-Requires:       python3-httpx
-Requires:       python3-h2
+# it requires https[http2] but that's not provided as extra subpackage
+# of python3-httpx so i'm adding it manually
+Requires: python3-h2
 
 %description -n python3-%{service}-tests-tempest
 %{common_desc}
@@ -85,17 +71,6 @@ Requires:       python3-h2
 Summary:        python-%{service}-tests-tempest documentation
 
 BuildArch:  noarch
-
-BuildRequires:  python3-sphinx
-BuildRequires:  python3-sphinxcontrib-apidoc
-BuildRequires:  python3-sphinxcontrib-rsvgconverter
-BuildRequires:  python3-openstackdocstheme
-# Required for documentation build
-BuildRequires:  python3-barbicanclient
-BuildRequires:  python3-oslo-config
-BuildRequires:  python3-tempest
-BuildRequires:  python3-tenacity
-BuildRequires:  python3-pyOpenSSL
 
 %description -n python-%{service}-tests-tempest-doc
 It contains the documentation for the Octavia tempest plugin.
@@ -108,13 +83,34 @@ It contains the documentation for the Octavia tempest plugin.
 %endif
 %autosetup -n %{plugin}-%{upstream_version} -S git
 
-# Let's handle dependencies ourseleves
-%py_req_cleanup
-# Remove bundled egg-info
-rm -rf %{module}.egg-info
+
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# python3-httpx does not provide httpx[http2] so we manage http2 extra manually.
+sed -i 's/httpx.*/httpx/g' requirements.txt
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs}; do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+# Automatic BR generation
+%generate_buildrequires
+%if 0%{?with_doc}
+  %pyproject_buildrequires -t -e docs
+%else
+  %pyproject_buildrequires -R
+%endif
 
 %build
-%{py3_build}
+%pyproject_wheel
 
 rm -f %{module}/contrib/test_server/*bin
 
@@ -128,14 +124,13 @@ popd
 
 # Generate Docs
 %if 0%{?with_doc}
-export PYTHONPATH=.
-sphinx-build -b html doc/source doc/build/html
+%tox -e docs
 # remove the sphinx build leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%{py3_install}
+%pyproject_install
 
 # Move httpd binary to a proper place
 install -d -p %{buildroot}%{_libexecdir}
@@ -154,7 +149,7 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/test_server/test_server.go
 %doc README.rst
 %exclude %{python3_sitelib}/%{module}/contrib/test_server/test_server.bin
 %{python3_sitelib}/%{module}
-%{python3_sitelib}/*.egg-info
+%{python3_sitelib}/*.dist-info
 
 %if 0%{?with_doc}
 %files -n python-%{service}-tests-tempest-doc
