@@ -13,7 +13,7 @@ Additionally it provides a plugin to automatically load these tests into Tempest
 
 
 Name:       python-%{service}-tests-tempest
-Version:    2.4.0
+Version:    2.4.1
 Release:    1%{?dist}
 Summary:    Tempest Integration of Octavia Project
 License:    ASL 2.0
@@ -163,6 +163,9 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/test_server/test_server.go
 %endif
 
 %changelog
+* Wed Jan 31 2024 RDO <dev@lists.rdoproject.org> 2.4.1-1
+- Update to 2.4.1
+
 * Wed Oct 11 2023 RDO <dev@lists.rdoproject.org> 2.4.0-1
 - Update to 2.4.0
 
