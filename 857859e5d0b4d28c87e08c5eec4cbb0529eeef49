@@ -1,0 +1,9 @@
+Code-Review+2: Joel Capitao <jcapitao@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Code-Review+1: Luigi Toscano <ltoscano@redhat.com>
+Workflow+1: Joel Capitao <jcapitao@redhat.com>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Wed, 31 Jan 2024 09:34:56 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/octavia-tempest-plugin-distgit/+/51432
+Project: openstack/octavia-tempest-plugin-distgit
+Branch: refs/heads/antelope-rdo
