@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x815AFEC729392386480E076DCC0DFE2D21C023C9
+%global sources_gpg_sign 0x2ef3fe0ec2b075ab7458b5f8b702b20b13df2318
 %global service octavia
 %global plugin octavia-tempest-plugin
 %global module octavia_tempest_plugin
@@ -19,8 +19,8 @@ Additionally it provides a plugin to automatically load these tests into Tempest
 
 
 Name:       python-%{service}-tests-tempest
-Version:    2.4.1
-Release:    1%{?dist}
+Version:    2.6.0
+Release:    2%{?dist}
 Summary:    Tempest Integration of Octavia Project
 License:    Apache-2.0
 URL:        https://git.openstack.org/cgit/openstack/%{plugin}/
@@ -163,6 +163,12 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/test_server/test_server.go
 %endif
 
 %changelog
+* Tue Apr 09 2024 RDO <dev@lists.rdoproject.org> 2.6.0-2
+- Rebuild in Bobcat
+
+* Mon Apr 08 2024 RDO <dev@lists.rdoproject.org> 2.6.0-1
+- Update to 2.6.0
+
 * Wed Oct 04 2023 RDO <dev@lists.rdoproject.org> 2.4.1-1
 - Update to 2.4.1
 
