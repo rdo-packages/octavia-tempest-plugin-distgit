@@ -1,0 +1,8 @@
+Workflow+1: Alfredo Moralejo <amoralej@redhat.com>
+Code-Review+2: Alfredo Moralejo <amoralej@redhat.com>
+Verified+2: Zuul CI <zuul@review.rdoproject.org>
+Submitted-by: Zuul CI <zuul@review.rdoproject.org>
+Submitted-at: Tue, 09 Apr 2024 06:47:44 +0000
+Reviewed-on: https://review.rdoproject.org/r/c/openstack/octavia-tempest-plugin-distgit/+/52737
+Project: openstack/octavia-tempest-plugin-distgit
+Branch: refs/heads/bobcat-rdo
