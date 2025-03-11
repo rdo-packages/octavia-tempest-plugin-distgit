@@ -3,6 +3,7 @@
 %global service octavia
 %global plugin octavia-tempest-plugin
 %global module octavia_tempest_plugin
+%define debug_package %{nil}
 %global with_doc 1
 
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
@@ -124,7 +125,7 @@ pushd %{module}/contrib/test_server
 # gobuild from Fedora's go-rpm-macros https://pagure.io/go-rpm-macros/blob/master/f/rpm/macros.d/macros.go-compilers-golang
 # debuginfo missing with compressdwarf https://bugzilla.redhat.com/show_bug.cgi?id=1602096
 %global _dwz_low_mem_die_limit 0
-CGO_ENABLED=0 GOOS=linux go build -o %{plugin}-tests-httpd -ldflags "-compressdwarf=false ${LDFLAGS:-} -B 0x$(head -c20 /dev/urandom|od -An -tx1|tr -d ' \n') -extldflags '-static %__global_ldflags'" -a -v -x test_server.go
+GO_LDFLAGS=%{gobuild_ldflags_shescaped} CGO_ENABLED=0 GOOS=linux go build -o %{plugin}-tests-httpd -a -v -x test_server.go
 popd
 
 # Generate Docs
