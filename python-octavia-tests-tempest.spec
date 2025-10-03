@@ -49,6 +49,7 @@ BuildRequires:  openstack-macros
 Summary:        python3-%{service}-tests-tempest golang files
 
 BuildRequires:  golang
+BuildRequires:  go-srpm-macros
 
 %description -n python3-%{service}-tests-tempest-golang
 %{common_desc}
@@ -124,10 +125,7 @@ rm -f %{module}/contrib/test_server/*bin
 
 # Generate octavia test httpd binary from test_server.go
 pushd %{module}/contrib/test_server
-# gobuild from Fedora's go-rpm-macros https://pagure.io/go-rpm-macros/blob/master/f/rpm/macros.d/macros.go-compilers-golang
-# debuginfo missing with compressdwarf https://bugzilla.redhat.com/show_bug.cgi?id=1602096
-%global _dwz_low_mem_die_limit 0
-GO_LDFLAGS=%{gobuild_ldflags_shescaped} CGO_ENABLED=0 GOOS=linux go build -o %{plugin}-tests-httpd -a -v -x test_server.go
+%gobuild -o %{plugin}-tests-httpd test_server.go
 popd
 
 # Generate Docs
