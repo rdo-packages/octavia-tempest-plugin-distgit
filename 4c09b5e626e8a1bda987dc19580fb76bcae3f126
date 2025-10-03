@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ae62df9_e0a751bc",
+        "filename": "python-octavia-tests-tempest.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 642
+      },
+      "writtenOn": "2025-10-03T14:02:20Z",
+      "side": 1,
+      "message": "the generated binary is used in cirros VMs, cirros doesn\u0027t have a \"real\" libc (it\u0027s still based on uclibc) so the binary must be static to run there.",
+      "range": {
+        "startLine": 128,
+        "startChar": 1,
+        "endLine": 128,
+        "endChar": 8
+      },
+      "revId": "4c09b5e626e8a1bda987dc19580fb76bcae3f126",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}
