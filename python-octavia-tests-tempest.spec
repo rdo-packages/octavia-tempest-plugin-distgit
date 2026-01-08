@@ -58,7 +58,6 @@ BuildRequires:  python3-setuptools
 
 Obsoletes:      python-octavia-tests < 2.0.0
 
-Requires:       python3-%{service}-tests-tempest-golang
 Requires:       python3-pbr >= 2.0.0
 Requires:       python3-oslotest >= 3.2.0
 Requires:       python3-tempest >= 1:18.0.0
