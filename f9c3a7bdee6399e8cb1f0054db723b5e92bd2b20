@@ -16,6 +16,23 @@
       "message": "W-1 until related tempestconf patch is merged",
       "revId": "f9c3a7bdee6399e8cb1f0054db723b5e92bd2b20",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "26de445b_3d296eac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 198
+      },
+      "writtenOn": "2026-02-19T12:56:18Z",
+      "side": 1,
+      "message": "straightforward",
+      "revId": "f9c3a7bdee6399e8cb1f0054db723b5e92bd2b20",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
     }
   ]
 }
