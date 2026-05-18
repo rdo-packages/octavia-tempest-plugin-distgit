@@ -166,3 +166,4 @@ rm  %{buildroot}%{python3_sitelib}/%{module}/contrib/test_server/test_server.go
 %endif
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/openstack/octavia-tempest-plugin/commit/bb4776fabba145a03ea0b0df379dcd63d1a26a90
